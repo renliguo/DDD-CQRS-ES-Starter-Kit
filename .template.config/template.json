@@ -1,0 +1,11 @@
+{
+  "author": "Luca Briguglia",
+  "classifications": [ "DDD", "CQRS", "Event Sourcing" ],
+  "name": "DDD-CQRS-ES Starter Kit",
+  "shortName": "ddd-cqrs-es-starter-kit",
+  "tags": {
+    "language": "C#"
+  },
+  "sourceName": "MyProject",
+  "preferNameDirectory": true
+}
