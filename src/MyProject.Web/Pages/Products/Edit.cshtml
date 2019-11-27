@@ -1,0 +1,76 @@
+﻿@page
+@using MyProject.Domain.Models.Products
+@model EditModel
+@{
+    ViewData["Title"] = "Edit Product";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <h1>Edit Product</h1>
+        <form method="post">
+            <input asp-for="ProductView.ProductId" type="hidden" />
+            <div class="form-group">
+                <label asp-for="ProductView.ProductName"></label>
+                <input asp-for="ProductView.ProductName" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductView.ProductDescription"></label>
+                <input asp-for="ProductView.ProductDescription" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductView.ProductPrice"></label>
+                <input asp-for="ProductView.ProductPrice" class="form-control" />
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Save</button>
+                @if (Model.ProductView.ProductStatus == ProductStatus.Draft)
+                {
+                    <button type="submit" asp-page-handler="Publish"
+                            asp-route-id="ProductView.ProductId" class="btn btn-primary">
+                        Publish
+                    </button>
+                }
+                else if (Model.ProductView.ProductStatus == ProductStatus.Published)
+                {
+                    <button type="submit" asp-page-handler="Withdraw"
+                            asp-route-id="ProductView.ProductId" class="btn btn-primary">
+                        Withdraw
+                    </button>
+                }
+                <button type="submit" asp-page-handler="Delete"
+                        asp-route-id="ProductView.ProductId" class="btn btn-danger">
+                    Delete
+                </button>
+                <a asp-page="./Products/List" class="btn btn-secondary" role="button">Cancel</a>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-8">
+        <h1>Events</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Type</th>
+                    <th scope="col">Data</th>
+                    <th scope="col">Time Stamp</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var evnt in Model.AggregateModel.Events)
+                {
+                    <tr>
+                        <td>@evnt.Type</td>
+                        <td>
+                            @foreach (var item in evnt.Data)
+                            {
+                                <div><strong>@item.Key</strong> : @item.Value</div>
+                            }
+                        </td>
+                        <td>@evnt.TimeStamp</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

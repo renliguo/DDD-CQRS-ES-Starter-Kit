@@ -7,16 +7,16 @@ using MyProject.Domain.Models.Products.Commands;
 
 namespace MyProject.Domain.Handlers.Products
 {
-    public class UpdateProductNameHandler : ICommandHandlerAsync<UpdateProductName>
+    public class UpdateProductDetailsHandler : ICommandHandlerAsync<UpdateProductDetails>
     {
         private readonly IRepository<Product> _repository;
 
-        public UpdateProductNameHandler(IRepository<Product> repository)
+        public UpdateProductDetailsHandler(IRepository<Product> repository)
         {
             _repository = repository;
         }
 
-        public async Task<CommandResponse> HandleAsync(UpdateProductName command)
+        public async Task<CommandResponse> HandleAsync(UpdateProductDetails command)
         {
             var product = await _repository.GetByIdAsync(command.AggregateRootId);
 
@@ -25,7 +25,7 @@ namespace MyProject.Domain.Handlers.Products
                 throw new ApplicationException($"Product not found. Id: {command.AggregateRootId}");
             }
 
-            product.UpdateName(command.Name);
+            product.UpdateDetails(command.Name, command.Description, command.Price);
 
             return new CommandResponse
             {

@@ -1,0 +1,39 @@
+﻿@page
+@using MyProject.Domain.Models.Products
+@model ListModel
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>Products</h1>
+<form method="post">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Published</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var product in Model.Products)
+        {
+            <tr>
+                <td>@product.ProductName</td>
+                <td>
+                    @if (product.ProductStatus == ProductStatus.Published)
+                    {
+                        <label>Yes</label>
+                    }
+                </td>
+                <td>
+                    <a asp-page="./Products/Edit" asp-route-id="@product.ProductId" class="btn btn-secondary" role="button">Edit</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+    <a asp-page="./Create" class="btn btn-primary" role="button">Create</a>
+</form>
+

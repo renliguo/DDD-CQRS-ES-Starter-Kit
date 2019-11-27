@@ -8,4 +8,8 @@
     <PackageReference Include="Kledex" Version="2.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MyProject.Domain.Models\MyProject.Domain.Models.csproj" />
+  </ItemGroup>
+
 </Project>

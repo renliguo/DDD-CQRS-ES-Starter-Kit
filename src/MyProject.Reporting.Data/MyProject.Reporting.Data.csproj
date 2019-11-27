@@ -9,4 +9,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MyProject.Domain.Models\MyProject.Domain.Models.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -6,8 +6,10 @@ namespace MyProject.Domain.Models.Products
 {
     public class Product : AggregateRoot
     {
-        public string Name { get; set; }
-        public ProductStatus Status { get; set; }
+        public string Name { get; private set; }
+        public string Description { get; private set; }
+        public decimal Price { get; private set; }
+        public ProductStatus Status { get; private set; }
 
         public Product()
         {
@@ -23,12 +25,14 @@ namespace MyProject.Domain.Models.Products
             });
         }
 
-        public void UpdateName(string name)
+        public void UpdateDetails(string name, string description, decimal price)
         {
-            AddAndApplyEvent(new ProductNameUpdated
+            AddAndApplyEvent(new ProductDetailsUpdated
             {
                 AggregateRootId = Id,
-                Name = name
+                Name = name,
+                Description = description,
+                Price = price
             });
         }
 
@@ -73,9 +77,11 @@ namespace MyProject.Domain.Models.Products
             Status = ProductStatus.Published;
         }
 
-        private void Apply(ProductNameUpdated @event)
+        private void Apply(ProductDetailsUpdated @event)
         {
             Name = @event.Name;
+            Description = @event.Description;
+            Price = @event.Price;
         }
 
         private void Apply(ProductWithdrew @event)
