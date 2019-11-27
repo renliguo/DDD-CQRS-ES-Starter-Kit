@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Kledex" Version="2.3.0" />
-    <PackageReference Include="Kledex.Bus.ServiceBus" Version="2.3.0" />
+    <PackageReference Include="Kledex.Bus.RabbitMQ" Version="2.3.0" />
     <PackageReference Include="Kledex.Caching.Memory" Version="2.3.0" />
     <PackageReference Include="Kledex.Store.Cosmos.Sql" Version="2.3.0" />
     <PackageReference Include="Kledex.UI" Version="2.3.0" />

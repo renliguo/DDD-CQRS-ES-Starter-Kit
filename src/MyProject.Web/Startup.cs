@@ -1,4 +1,4 @@
-using Kledex.Bus.ServiceBus.Extensions;
+using Kledex.Bus.RabbitMQ.Extensions;
 using Kledex.Caching.Memory;
 using Kledex.Extensions;
 using Kledex.Store.Cosmos.Sql;
@@ -38,7 +38,7 @@ namespace MyProject.Web
             services
                 .AddKledex(typeof(CreateProductHandler), typeof(ProductCreatedHandler))
                 .AddCosmosDbSqlProvider(Configuration)
-                .AddServiceBusProvider()
+                .AddRabbitMQProvider()
                 .AddFluentValidationProvider()
                 .AddMemoryCacheProvider()
                 .AddUI();
