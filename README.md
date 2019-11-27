@@ -5,7 +5,6 @@ Visual Studio Template for working with DDD, CQRS and Event Sourcing.
 ## Technology
 
 - .NET Core 3.0
-- .NET Standard 2.1
 - Entity Framework Core 3.0
 - SQL Server
 - CosmoDB SQL API
