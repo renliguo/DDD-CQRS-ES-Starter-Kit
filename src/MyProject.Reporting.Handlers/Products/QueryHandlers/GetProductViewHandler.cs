@@ -24,7 +24,8 @@ namespace MyProject.Reporting.Handlers
                 ProductId = x.Id,
                 ProductName = x.Name,
                 ProductDescription = x.Description,
-                ProductPrice = x.Price
+                ProductPrice = x.Price,
+                ProductStatus = x.Status
             }).SingleOrDefaultAsync();
         }
     }

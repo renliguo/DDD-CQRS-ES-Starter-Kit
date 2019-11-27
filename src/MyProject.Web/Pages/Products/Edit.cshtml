@@ -27,22 +27,22 @@
                 @if (Model.ProductView.ProductStatus == ProductStatus.Draft)
                 {
                     <button type="submit" asp-page-handler="Publish"
-                            asp-route-id="ProductView.ProductId" class="btn btn-primary">
+                            asp-route-id="@Model.ProductView.ProductId" class="btn btn-primary">
                         Publish
                     </button>
                 }
                 else if (Model.ProductView.ProductStatus == ProductStatus.Published)
                 {
                     <button type="submit" asp-page-handler="Withdraw"
-                            asp-route-id="ProductView.ProductId" class="btn btn-primary">
+                            asp-route-id="@Model.ProductView.ProductId" class="btn btn-primary">
                         Withdraw
                     </button>
                 }
                 <button type="submit" asp-page-handler="Delete"
-                        asp-route-id="ProductView.ProductId" class="btn btn-danger">
+                        asp-route-id="@Model.ProductView.ProductId" class="btn btn-danger">
                     Delete
                 </button>
-                <a asp-page="./Products/List" class="btn btn-secondary" role="button">Cancel</a>
+                <a asp-page="/Products/List" class="btn btn-secondary" role="button">Cancel</a>
             </div>
         </form>
     </div>

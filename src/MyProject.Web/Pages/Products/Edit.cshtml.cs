@@ -52,7 +52,7 @@ namespace MyProject.Web.Pages.Products
 
             await _dispatcher.SendAsync(command);
 
-            return RedirectToPage("./Edit", new { id });
+            return RedirectToPage(new { id });
         }
 
         public async Task<IActionResult> OnPostDeleteAsync(Guid id)
@@ -64,7 +64,7 @@ namespace MyProject.Web.Pages.Products
 
             await _dispatcher.SendAsync(command);
 
-            return RedirectToPage();
+            return RedirectToPage(new { id });
         }
 
         public async Task<IActionResult> OnPostPublishAsync(Guid id)
@@ -76,7 +76,7 @@ namespace MyProject.Web.Pages.Products
 
             await _dispatcher.SendAsync(command);
 
-            return RedirectToPage();
+            return RedirectToPage(new { id });
         }
 
         public async Task<IActionResult> OnPostWithdrawAsync(Guid id)
@@ -88,7 +88,7 @@ namespace MyProject.Web.Pages.Products
 
             await _dispatcher.SendAsync(command);
 
-            return RedirectToPage();
+            return RedirectToPage(new { id });
         }
     }
 }

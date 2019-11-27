@@ -14,10 +14,7 @@ namespace MyProject.Domain.Validators.Products
         public CreateProductValidator(IDispatcher dispatcher)
         {
             _dispatcher = dispatcher;
-        }
 
-        public CreateProductValidator()
-        {
             RuleFor(c => c.Name)
                 .NotEmpty().WithMessage("Product name is required.")
                 .Length(1, 100).WithMessage("Product name length must be between 1 and 100 characters.")
