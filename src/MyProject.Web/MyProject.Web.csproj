@@ -15,12 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MyProject.Domain.Handlers\MyProject.Domain.Handlers.csproj" />
-    <ProjectReference Include="..\MyProject.Domain.Models\MyProject.Domain.Models.csproj" />
-    <ProjectReference Include="..\MyProject.Domain.Validators\MyProject.Domain.Validators.csproj" />
-    <ProjectReference Include="..\MyProject.Reporting.Data\MyProject.Reporting.Data.csproj" />
-    <ProjectReference Include="..\MyProject.Reporting.Handlers\MyProject.Reporting.Handlers.csproj" />
-    <ProjectReference Include="..\MyProject.Reporting.Models\MyProject.Reporting.Models.csproj" />
+    <ProjectReference Include="..\MyProject.Domain\MyProject.Domain.csproj" />
+    <ProjectReference Include="..\MyProject.Reporting\MyProject.Reporting.csproj" />
   </ItemGroup>
 
 </Project>

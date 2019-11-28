@@ -2,8 +2,8 @@
 using Kledex;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using MyProject.Domain.Models.Products.Commands;
-using MyProject.Reporting.Models;
+using MyProject.Domain.Products.Commands;
+using MyProject.Reporting.Products.Models;
 
 namespace MyProject.Web.Pages.Products
 {

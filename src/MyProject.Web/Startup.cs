@@ -12,11 +12,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
-using MyProject.Domain.Handlers.Products;
-using MyProject.Domain.Models.Products.Commands;
-using MyProject.Domain.Validators.Products;
+using MyProject.Domain.Products;
 using MyProject.Reporting.Data;
-using MyProject.Reporting.Handlers;
+using MyProject.Reporting.Products.Models;
 
 namespace MyProject.Web
 {
@@ -38,7 +36,7 @@ namespace MyProject.Web
                 options.UseSqlServer(Configuration.GetConnectionString("ReadModel")));
 
             services
-                .AddKledex(typeof(CreateProductHandler), typeof(CreateProductValidator), typeof(ProductCreatedHandler))
+                .AddKledex(typeof(Product), typeof(ProductView))
                 .AddCosmosDbSqlProvider(Configuration)
                 .AddRabbitMQProvider()
                 .AddFluentValidationProvider()

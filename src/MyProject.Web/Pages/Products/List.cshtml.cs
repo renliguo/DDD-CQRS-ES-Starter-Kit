@@ -2,8 +2,8 @@
 using System.Threading.Tasks;
 using Kledex;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using MyProject.Reporting.Models;
-using MyProject.Reporting.Models.Products.Queries;
+using MyProject.Reporting.Products.Models;
+using MyProject.Reporting.Products.Queries;
 
 namespace MyProject.Web.Pages.Products
 {

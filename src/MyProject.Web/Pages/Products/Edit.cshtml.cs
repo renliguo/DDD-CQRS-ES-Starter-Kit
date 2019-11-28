@@ -5,9 +5,9 @@ using Kledex.UI.Models;
 using Kledex.UI.Queries;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using MyProject.Domain.Models.Products.Commands;
-using MyProject.Reporting.Models;
-using MyProject.Reporting.Models.Products.Queries;
+using MyProject.Domain.Products.Commands;
+using MyProject.Reporting.Products.Models;
+using MyProject.Reporting.Products.Queries;
 
 namespace MyProject.Web.Pages.Products
 {
