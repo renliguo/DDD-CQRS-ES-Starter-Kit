@@ -1,4 +1,4 @@
-# DDD-CQRS-ES Starter Kit (0.1 Alpha)
+# DDD-CQRS-ES Starter Kit
 
 Visual Studio Template for working with DDD, CQRS and Event Sourcing.
 
